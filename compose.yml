@@ -1,0 +1,12 @@
+services:
+  ollama:
+    build: ollama
+    ports:
+      - 11434:11434
+    networks:
+      - tutorial-net
+    entrypoint: ["/usr/bin/bash", "/pull-llama.sh"]
+
+networks:
+  tutorial-net:
+    driver: bridge

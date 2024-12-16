@@ -1,0 +1,56 @@
+2024-12-16 14:38:15,264 - __main__ - INFO - Starting data preprocessing...
+2024-12-16 14:38:15,264 - src.data_preprocessor - INFO - Initializing with embedding model: all-MiniLM-L6-v2
+2024-12-16 14:38:15,280 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-12-16 14:38:15,280 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-12-16 14:38:19,744 - src.data_preprocessor - INFO - Initializing ChromaDB client
+2024-12-16 14:38:19,760 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-12-16 14:38:20,249 - src.data_preprocessor - INFO - Starting preprocessing pipeline
+2024-12-16 14:38:20,250 - src.data_preprocessor - INFO - Loading dataset from data\v_nodelink.jsonl
+2024-12-16 14:38:20,271 - src.data_preprocessor - INFO - Successfully loaded 1500 records
+2024-12-16 14:38:20,271 - src.data_preprocessor - INFO - Starting preprocessing and embedding
+2024-12-16 14:38:59,541 - __main__ - INFO - Starting data preprocessing...
+2024-12-16 14:38:59,541 - src.data_preprocessor - INFO - Initializing with embedding model: all-MiniLM-L6-v2
+2024-12-16 14:38:59,541 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-12-16 14:38:59,541 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-12-16 14:39:03,936 - src.data_preprocessor - INFO - Initializing ChromaDB client
+2024-12-16 14:39:03,953 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-12-16 14:39:04,137 - src.data_preprocessor - ERROR - Failed to initialize ChromaDB: Collection dataset_collection already exists
+2024-12-16 14:39:04,152 - __main__ - ERROR - Critical error in main: Collection dataset_collection already exists
+Traceback (most recent call last):
+  File "C:\Users\andidprastyo\Documents\Github\llm-query\main.py", line 30, in main
+    preprocessor = DataPreprocessor()
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andidprastyo\Documents\Github\llm-query\src\data_preprocessor.py", line 31, in __init__
+    self.collection = self.chroma_client.create_collection(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andidprastyo\miniconda3\Lib\site-packages\chromadb\api\client.py", line 147, in create_collection
+    model = self._server.create_collection(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andidprastyo\miniconda3\Lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 150, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andidprastyo\miniconda3\Lib\site-packages\chromadb\api\segment.py", line 103, in wrapper
+    return self._rate_limit_enforcer.rate_limit(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andidprastyo\miniconda3\Lib\site-packages\chromadb\rate_limit\simple_rate_limit\__init__.py", line 23, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andidprastyo\miniconda3\Lib\site-packages\chromadb\api\segment.py", line 226, in create_collection
+    coll, created = self._sysdb.create_collection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andidprastyo\miniconda3\Lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 150, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andidprastyo\miniconda3\Lib\site-packages\chromadb\db\mixins\sysdb.py", line 241, in create_collection
+    raise UniqueConstraintError(f"Collection {name} already exists")
+chromadb.errors.UniqueConstraintError: Collection dataset_collection already exists
+2024-12-16 14:39:19,376 - __main__ - INFO - Starting data preprocessing...
+2024-12-16 14:39:19,389 - src.data_preprocessor - INFO - Initializing with embedding model: all-MiniLM-L6-v2
+2024-12-16 14:39:19,389 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-12-16 14:39:19,389 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-12-16 14:39:22,868 - src.data_preprocessor - INFO - Initializing ChromaDB client
+2024-12-16 14:39:22,884 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-12-16 14:39:23,381 - src.data_preprocessor - INFO - Starting preprocessing pipeline
+2024-12-16 14:39:23,381 - src.data_preprocessor - INFO - Loading dataset from data\v_nodelink.jsonl
+2024-12-16 14:39:23,410 - src.data_preprocessor - INFO - Successfully loaded 1500 records
+2024-12-16 14:39:23,410 - src.data_preprocessor - INFO - Starting preprocessing and embedding
