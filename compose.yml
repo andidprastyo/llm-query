@@ -2,11 +2,20 @@ services:
   ollama:
     build: ollama
     ports:
-      - 11434:11434
-    networks:
-      - tutorial-net
-    entrypoint: ["/usr/bin/bash", "/pull-llama.sh"]
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    entrypoint: ["/bin/bash", "/pull-llama.sh"]
 
-networks:
-  tutorial-net:
-    driver: bridge
+  fastapi:
+    build:
+      context: ./fastapi
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - ollama
+volumes:
+  ollama_data:
