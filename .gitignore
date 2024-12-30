@@ -1,0 +1,6 @@
+.conda/
+__pycache__/
+*.pyc
+*.env
+*.log
+*.pkl
