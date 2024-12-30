@@ -1,13 +1,16 @@
+# ollama/pull-llama.sh
+#!/bin/bash
+set -e
 
-./bin/ollama serve &
+# Start Ollama server
+ollama serve &
 
-pid=$!
-
+# Wait for Ollama server to start
 sleep 5
 
-
-echo "Pulling llama3.2:1b model"
+# Pull the model
+echo "Pulling llama3.2:1b model..."
 ollama pull llama3.2:1b
 
-
-wait $pid
+# Keep container running
+wait
